@@ -1,11 +1,21 @@
 version: "3.8"
 
 services:
+  api:
+    container_name: api
+    build: .
+    command: npm run start
+    ports:
+      - "4003:4003"
+    volumes:
+      - .:/usr/app
+    restart: on-failure
+    depends_on:
+      - db
   db:
     container_name: "wetbat-db"
     image: postgres:alpine
     restart: always
-    platform: linux/amd64
     ports:
       - "5432:5432"
     environment:
@@ -13,4 +23,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: wetbat
     volumes:
-      - ./data:/data/postgres
+      - ./data:/var/lib/postgresql/data
+
+volumes:
+  data:
