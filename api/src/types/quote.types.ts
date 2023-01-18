@@ -6,7 +6,7 @@ export const CreateQuoteRequestSchema = z.object({
   depart_date: z.string().datetime({ offset: true }),
   return_date: z.string().datetime({ offset: true }),
   people: z.number(),
-  transportation: z.string(),
+  transportations_id: z.number(),
   name: z.string(),
   price: z.number(),
 });
@@ -20,7 +20,7 @@ export const UpdateQuoteRequestSchema = z.object({
   depart_date: z.string().datetime({ offset: true }),
   return_date: z.string().datetime({ offset: true }),
   people: z.number(),
-  transportation: z.string(),
+  transportations_id: z.number(),
   name: z.string(),
   price: z.number(),
 });
