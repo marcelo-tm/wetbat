@@ -8,15 +8,24 @@ datasource db {
 }
 
 model Quote {
-  id String @id @default(uuid())
-  origin String
-  destination String
-  depart_date DateTime
-  return_date DateTime
-  people Int
-  transportation String
-  name String
-  price Decimal
+  id                 String         @id @default(uuid())
+  origin             String
+  destination        String
+  depart_date        DateTime
+  return_date        DateTime?
+  people             Int
+  transportation     Transportation @relation(fields: [transportations_id], references: [id])
+  name               String
+  price              Decimal
+  transportations_id Int
 
   @@map("quotes")
+}
+
+model Transportation {
+  id    Int     @id @default(autoincrement())
+  name  String
+  Quote Quote[]
+
+  @@map("transportations")
 }
