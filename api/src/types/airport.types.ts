@@ -6,14 +6,14 @@ export const AirportRequestSchema = z.object({
 
 export type AirportRequestType = z.infer<typeof AirportRequestSchema>;
 
-export type AirportResponseType = {
+export interface AirportResponseType {
   iata: string;
   name: string;
   city: string;
   country: string;
-};
+}
 
-export type AirportApiResultType = {
+export interface AirportApiResultType {
   icao: string;
   iata: string;
   name: string;
@@ -24,4 +24,4 @@ export type AirportApiResultType = {
   latitude: string;
   longitude: string;
   timezone: string;
-};
+}
