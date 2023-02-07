@@ -1,0 +1,13 @@
+{
+  "notifications": "BellIcon",
+  "messages": "ChatBubbleLeftIcon",
+  "home": "HomeIcon",
+  "quotes": "CurrencyDollarIcon",
+  "leads": "ListBulletIcon",
+  "tours": "PaperAirplaneIcon",
+  "invoices": "DocumentIcon",
+  "analytics": "ArrowTrendingUpIcon",
+  "team": "UserGroupIcon",
+  "admin": "Cog8ToothIcon",
+  "support": "LifebuoyIcon"
+}

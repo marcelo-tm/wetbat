@@ -1,0 +1,51 @@
+[
+  [
+    {
+      "icon": "home",
+      "label": "Home",
+      "to": "/"
+    },
+    {
+      "icon": "quotes",
+      "label": "Quotes",
+      "to": "/quotes"
+    },
+    {
+      "icon": "leads",
+      "label": "Leads",
+      "to": "/"
+    },
+    {
+      "icon": "tours",
+      "label": "Tours",
+      "to": "/"
+    }
+  ],
+  [
+    {
+      "icon": "invoices",
+      "label": "Invoices",
+      "to": "/"
+    },
+    {
+      "icon": "analytics",
+      "label": "Analytics",
+      "to": "/quotes"
+    },
+    {
+      "icon": "team",
+      "label": "Team",
+      "to": "/"
+    },
+    {
+      "icon": "admin",
+      "label": "Admin",
+      "to": "/"
+    },
+    {
+      "icon": "support",
+      "label": "Support",
+      "to": "/"
+    }
+  ]
+]
