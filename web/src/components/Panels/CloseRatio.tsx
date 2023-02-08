@@ -1,4 +1,9 @@
+import { useMemo } from "react";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import "chart.js/auto";
+import { Chart } from "react-chartjs-2";
+
+import { closeRatio } from "../../data/charts.json";
 
 export function CloseRatioActions() {
   function handleClick() {
@@ -13,5 +18,24 @@ export function CloseRatioActions() {
 }
 
 export function CloseRatio() {
-  return <div>Close Ratio</div>;
+  const data = useMemo(() => {
+    return {
+      labels: [],
+      datasets: [
+        {
+          data: [closeRatio.notClosed, closeRatio.closed],
+          backgroundColor: ["rgb(230, 123, 121)", "rgb(90, 172, 168)"],
+          hoverOffset: 4,
+        },
+      ],
+    };
+  }, [closeRatio]);
+
+  return (
+    <div className="flex justify-center items-center">
+      <div className="w-36 h-36">
+        <Chart type="doughnut" data={data} />
+      </div>
+    </div>
+  );
 }
