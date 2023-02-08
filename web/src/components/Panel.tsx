@@ -20,7 +20,7 @@ export function Panel({
         </div>
         {actions}
       </div>
-      <div>{children}</div>
+      {children}
     </div>
   );
 }

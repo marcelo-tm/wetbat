@@ -40,7 +40,7 @@ export function CloseRatio({ ratio }: CloseRatioProps) {
 
   return (
     <div className="flex justify-center items-center p-4">
-      <div className="w-28 h-28">
+      <div className="w-44 h-44">
         <Chart type="doughnut" data={chartData} />
       </div>
     </div>

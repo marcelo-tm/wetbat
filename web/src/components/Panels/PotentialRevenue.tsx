@@ -41,7 +41,7 @@ export function PotentialRevenue({ list }: PotentialRevenueProps) {
   }, [list]);
 
   return (
-    <div className="flex justify-center p-4">
+    <div className="flex justify-center items-center h-[calc(100%-54px)] overflow-hidden">
       <div className="flex">
         {data.map((item, i) => (
           <div key={i} className="w-28 h-28">
