@@ -31,6 +31,7 @@ import { CloseRatio, CloseRatioActions } from "../components/Panels/CloseRatio";
 
 import info from "../data/banner_info.json";
 import teamData from "../data/team_chat.json";
+import { closeRatio, potentialRevenue, revenue } from "../data/charts.json";
 
 export function HomePage() {
   return (
@@ -83,7 +84,7 @@ export function HomePage() {
         title="Revenue"
         actions={<RevenueActions />}
       >
-        <Revenue />
+        <Revenue list={revenue} />
       </Panel>
 
       <Panel
@@ -91,7 +92,7 @@ export function HomePage() {
         title="Potential revenue"
         actions={<PotentialRevenueActions />}
       >
-        <PotentialRevenue />
+        <PotentialRevenue list={potentialRevenue} />
       </Panel>
 
       <Panel
@@ -99,7 +100,7 @@ export function HomePage() {
         title="Close ratios"
         actions={<CloseRatioActions />}
       >
-        <CloseRatio />
+        <CloseRatio ratio={closeRatio} />
       </Panel>
     </div>
   );

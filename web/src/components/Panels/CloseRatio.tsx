@@ -3,7 +3,14 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
 
-import { closeRatio } from "../../data/charts.json";
+type ItemProps = {
+  data: number[];
+  colors: string[];
+};
+
+type CloseRatioProps = {
+  ratio: ItemProps;
+};
 
 export function CloseRatioActions() {
   function handleClick() {
@@ -17,24 +24,24 @@ export function CloseRatioActions() {
   );
 }
 
-export function CloseRatio() {
-  const data = useMemo(() => {
+export function CloseRatio({ ratio }: CloseRatioProps) {
+  const chartData = useMemo(() => {
     return {
       labels: [],
       datasets: [
         {
-          data: closeRatio.data,
-          backgroundColor: closeRatio.colors,
+          data: ratio.data,
+          backgroundColor: ratio.colors,
           hoverOffset: 4,
         },
       ],
     };
-  }, [closeRatio]);
+  }, [ratio]);
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center p-4">
       <div className="w-28 h-28">
-        <Chart type="doughnut" data={data} />
+        <Chart type="doughnut" data={chartData} />
       </div>
     </div>
   );

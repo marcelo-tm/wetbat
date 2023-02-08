@@ -3,7 +3,16 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
 
-import { revenue } from "../../data/charts.json";
+import monthsLabels from "../../data/months.json";
+
+type ItemProps = {
+  data: number[];
+  borderColor: string;
+};
+
+type RevenueProps = {
+  list: ItemProps[];
+};
 
 export function RevenueActions() {
   function handleClick() {
@@ -17,24 +26,11 @@ export function RevenueActions() {
   );
 }
 
-export function Revenue() {
+export function Revenue({ list }: RevenueProps) {
   const data = useMemo(() => {
     return {
-      labels: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      datasets: revenue.map((item) => {
+      labels: monthsLabels.contracted,
+      datasets: list.map((item) => {
         return {
           data: item.data,
           fill: false,
@@ -43,7 +39,7 @@ export function Revenue() {
         };
       }),
     };
-  }, [revenue]);
+  }, [list]);
 
   const options = {
     plugins: {
@@ -54,7 +50,7 @@ export function Revenue() {
   };
 
   return (
-    <div className="">
+    <div className="p-4">
       <Chart type="line" data={data} options={options} />
     </div>
   );

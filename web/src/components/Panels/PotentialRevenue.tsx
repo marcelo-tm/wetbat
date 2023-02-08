@@ -3,7 +3,14 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
 
-import { potentialRevenue } from "../../data/charts.json";
+type ItemProps = {
+  data: number[];
+  colors: string[];
+};
+
+type PotentialRevenueProps = {
+  list: ItemProps[];
+};
 
 export function PotentialRevenueActions() {
   function handleClick() {
@@ -17,9 +24,9 @@ export function PotentialRevenueActions() {
   );
 }
 
-export function PotentialRevenue() {
+export function PotentialRevenue({ list }: PotentialRevenueProps) {
   const data = useMemo(() => {
-    return potentialRevenue.map((item) => {
+    return list.map((item) => {
       return {
         labels: [],
         datasets: [
@@ -31,10 +38,10 @@ export function PotentialRevenue() {
         ],
       };
     });
-  }, [potentialRevenue]);
+  }, [list]);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center p-4">
       <div className="flex">
         {data.map((item, i) => (
           <div key={i} className="w-28 h-28">
