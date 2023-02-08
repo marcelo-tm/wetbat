@@ -23,8 +23,8 @@ export function CloseRatio() {
       labels: [],
       datasets: [
         {
-          data: [closeRatio.notClosed, closeRatio.closed],
-          backgroundColor: ["rgb(230, 123, 121)", "rgb(90, 172, 168)"],
+          data: closeRatio.data,
+          backgroundColor: closeRatio.colors,
           hoverOffset: 4,
         },
       ],
@@ -33,7 +33,7 @@ export function CloseRatio() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-36 h-36">
+      <div className="w-28 h-28">
         <Chart type="doughnut" data={data} />
       </div>
     </div>
