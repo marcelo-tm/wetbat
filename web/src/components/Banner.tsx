@@ -13,14 +13,11 @@ type BannerInfoProps = {
   pending: number;
 };
 
-type BannerProps = {
+interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   info: BannerInfoProps;
-};
+}
 
 function InfoItem({ quantity, label }: InfoItemProps) {
-  var parser = new DOMParser();
-  var doc = parser.parseFromString(label, "text/html");
-
   return (
     <div className="flex gap-2">
       <p className="text-custom-dark-yellow text-5xl font-bold drop-shadow-md">
@@ -33,9 +30,13 @@ function InfoItem({ quantity, label }: InfoItemProps) {
   );
 }
 
-export function Banner({ info }: BannerProps) {
+export function Banner({ info, className }: BannerProps) {
   return (
-    <div className="p-5 w-full flex justify-between gap-3 bg-gradient-to-r from-custom-dark-green to-custom-purple rounded-lg text-white">
+    <div
+      className={`p-5 w-full flex justify-between gap-3 bg-gradient-to-r from-custom-dark-green to-custom-purple rounded-lg text-white ${
+        className ? className : ""
+      }`}
+    >
       <div>
         <p className="text-3xl font-bold leading-relaxed">
           Welcome to

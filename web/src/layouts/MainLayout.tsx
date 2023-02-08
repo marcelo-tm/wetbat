@@ -6,7 +6,7 @@ import { Navigation } from "../components/Navigation";
 
 export function MainLayout() {
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-full flex flex-col bg-custom-bg">
       <Header />
 
       <main className="flex">
