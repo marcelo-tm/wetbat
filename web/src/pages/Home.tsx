@@ -11,7 +11,6 @@ import {
   HandThumbUpIcon,
 } from "@heroicons/react/24/outline";
 
-import info from "../data/banner_info.json";
 import { QuickQuote, QuickQuoteActions } from "../components/Panels/QuickQuote";
 import {
   PendingQuotes,
@@ -30,6 +29,9 @@ import {
 } from "../components/Panels/PotentialRevenue";
 import { CloseRatio, CloseRatioActions } from "../components/Panels/CloseRatio";
 
+import info from "../data/banner_info.json";
+import teamData from "../data/team_chat.json";
+
 export function HomePage() {
   return (
     <div className="p-5 w-full grid grid-cols-3 gap-x-4 gap-y-8">
@@ -42,6 +44,7 @@ export function HomePage() {
       >
         <QuickQuote />
       </Panel>
+
       <Panel
         icon={<ClockIcon />}
         title="Pending quotes"
@@ -49,6 +52,7 @@ export function HomePage() {
       >
         <PendingQuotes />
       </Panel>
+
       <Panel
         icon={<EnvelopeIcon />}
         title="New leads"
@@ -56,6 +60,7 @@ export function HomePage() {
       >
         <NewLeads />
       </Panel>
+
       <Panel
         icon={<PaperAirplaneIcon />}
         title="Popular destinations & packages"
@@ -64,13 +69,15 @@ export function HomePage() {
       >
         <PopularDestinations />
       </Panel>
+
       <Panel
         icon={<ChatBubbleLeftIcon />}
         title="Team chat"
         actions={<TeamChatActions />}
       >
-        <TeamChat />
+        <TeamChat list={teamData} />
       </Panel>
+
       <Panel
         icon={<ChartBarIcon />}
         title="Revenue"
@@ -78,6 +85,7 @@ export function HomePage() {
       >
         <Revenue />
       </Panel>
+
       <Panel
         icon={<ChartPieIcon />}
         title="Potential revenue"
@@ -85,6 +93,7 @@ export function HomePage() {
       >
         <PotentialRevenue />
       </Panel>
+
       <Panel
         icon={<HandThumbUpIcon />}
         title="Close ratios"
