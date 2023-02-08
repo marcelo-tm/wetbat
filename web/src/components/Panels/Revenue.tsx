@@ -1,4 +1,9 @@
+import { useMemo } from "react";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import "chart.js/auto";
+import { Chart } from "react-chartjs-2";
+
+import { revenue } from "../../data/charts.json";
 
 export function RevenueActions() {
   function handleClick() {
@@ -13,5 +18,44 @@ export function RevenueActions() {
 }
 
 export function Revenue() {
-  return <div>Revenue</div>;
+  const data = useMemo(() => {
+    return {
+      labels: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      datasets: revenue.map((item) => {
+        return {
+          data: item.data,
+          fill: false,
+          borderColor: item.borderColor,
+          tension: 0.1,
+        };
+      }),
+    };
+  }, [revenue]);
+
+  const options = {
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+  return (
+    <div className="">
+      <Chart type="line" data={data} options={options} />
+    </div>
+  );
 }
