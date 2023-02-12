@@ -1,0 +1,56 @@
+[
+  {
+    "id": "f4add08a-c2fa-4c3b-b588-3c7c343fdcec",
+    "name": "Ava Harris",
+    "destination": "VANCOUVER",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "cee92c4c-e5ee-4c52-90ed-e5c21a13a8e0",
+    "name": "Katie Kim",
+    "destination": "BEIJING",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "1ee459be-fc01-4bf7-aa31-bcb194c5592d",
+    "name": "Marjorie Porter",
+    "destination": "NEW YORK",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "b25b1264-73a4-4c70-9458-b684840c0628",
+    "name": "Philip Brown",
+    "destination": "BUENOS AIRES",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "71c8b55b-3f19-4509-8aec-a77755101326",
+    "name": "Roberta Harper",
+    "destination": "JOHANNESBURG",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "18682c0d-001b-4dfb-859d-db17d1e0f922",
+    "name": "Willie Ford",
+    "destination": "MONTREAL",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "806fdf63-ace9-459a-9956-f9ce90e23034",
+    "name": "Ethel Price",
+    "destination": "HONG KONG",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "3f849d05-be67-440c-b27e-237c0e0041e3",
+    "name": "Flenn Nelson",
+    "destination": "PARIS",
+    "price": "$ 1000.00"
+  },
+  {
+    "id": "267b384f-4ae2-4a8c-8725-3210e6d52d0b",
+    "name": "Tyler Obrien",
+    "destination": "LONDON",
+    "price": "$ 1000.00"
+  }
+]

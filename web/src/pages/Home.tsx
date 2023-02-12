@@ -32,8 +32,13 @@ import { CloseRatio, CloseRatioActions } from "../components/Panels/CloseRatio";
 import info from "../data/banner_info.json";
 import teamData from "../data/team_chat.json";
 import { closeRatio, potentialRevenue, revenue } from "../data/charts.json";
+import pendingQuotes from "../data/pending_quotes.json";
 
 export function HomePage() {
+  function handlePendingQuotesClick(id: string) {
+    console.log(id);
+  }
+
   return (
     <div className="p-5 w-full grid grid-cols-3 gap-x-4 gap-y-8">
       <Banner info={info} className="col-span-3" />
@@ -51,7 +56,10 @@ export function HomePage() {
         title="Pending quotes"
         actions={<PendingQuotesActions />}
       >
-        <PendingQuotes />
+        <PendingQuotes
+          list={pendingQuotes}
+          onClick={handlePendingQuotesClick}
+        />
       </Panel>
 
       <Panel
