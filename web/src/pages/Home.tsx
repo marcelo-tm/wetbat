@@ -34,6 +34,8 @@ import teamData from "../data/team_chat.json";
 import { closeRatio, potentialRevenue, revenue } from "../data/charts.json";
 import pendingQuotes from "../data/pending_quotes.json";
 import newLeads from "../data/new_leads.json";
+import peopleList from "../data/people_list.json";
+import transportationList from "../data/transportation_list.json";
 
 export function HomePage() {
   function handleTeamChatClick(id: string) {
@@ -48,6 +50,10 @@ export function HomePage() {
     console.log(id);
   }
 
+  function handleQuickQuoteCreate() {
+    console.log("QUICK QUOTE");
+  }
+
   return (
     <div className="p-5 w-full grid grid-cols-3 gap-x-4 gap-y-8">
       <Banner info={info} className="col-span-3" />
@@ -57,7 +63,11 @@ export function HomePage() {
         title="Quick quote"
         actions={<QuickQuoteActions />}
       >
-        <QuickQuote />
+        <QuickQuote
+          onSubmit={handleQuickQuoteCreate}
+          peopleList={peopleList}
+          transportationList={transportationList}
+        />
       </Panel>
 
       <Panel
