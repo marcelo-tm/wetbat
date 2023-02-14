@@ -17,6 +17,7 @@ type TeamChatUserProps = {
 
 type TeamChatProps = {
   list: TeamChatUserProps[];
+  onClick: (id: string) => void;
 };
 
 const memberStatus: TeamStatus[] = [
@@ -54,11 +55,7 @@ export function TeamChatActions() {
   );
 }
 
-export function TeamChat({ list }: TeamChatProps) {
-  function handleChatClick(id: string) {
-    console.log(`Clicked on the chat item for id ${id}`);
-  }
-
+export function TeamChat({ list, onClick }: TeamChatProps) {
   return (
     <ul>
       {list.map((item) => {
@@ -89,7 +86,7 @@ export function TeamChat({ list }: TeamChatProps) {
               </div>
             </div>
             <div>
-              <button type="button" onClick={() => handleChatClick(item.id)}>
+              <button type="button" onClick={() => onClick(item.id)}>
                 <ChatBubbleLeftEllipsisIcon className="text-custom-dark-green w-8 h-8" />
               </button>
             </div>

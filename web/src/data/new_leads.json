@@ -1,0 +1,30 @@
+[
+  {
+    "id": "3c924afd-bad6-4e58-8f62-e0f2ca6f460a",
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "name": "Eduardo Ford",
+    "message": "Hey! I want to place my package",
+    "date": "13:40 PM"
+  },
+  {
+    "id": "1ff039df-0e50-40e6-bde3-fb56dd430607",
+    "avatar": "https://randomuser.me/api/portraits/men/77.jpg",
+    "name": "Travis Wheeler",
+    "message": "Hey! I want to place my package",
+    "date": "13:50 PM"
+  },
+  {
+    "id": "b6889e2e-22a9-4d83-8f20-a8dff5613fe3",
+    "avatar": "https://randomuser.me/api/portraits/men/41.jpg",
+    "name": "Roy Silva",
+    "message": "Hey! I want to place my package",
+    "date": "14:40 PM"
+  },
+  {
+    "id": "02f03e76-1019-4b17-a2bd-6d3f17de1060",
+    "avatar": "https://randomuser.me/api/portraits/women/19.jpg",
+    "name": "Mattie Nelson",
+    "message": "Hey! I want to place my package",
+    "date": "15:40 PM"
+  }
+]

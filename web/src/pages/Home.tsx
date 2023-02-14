@@ -33,9 +33,18 @@ import info from "../data/banner_info.json";
 import teamData from "../data/team_chat.json";
 import { closeRatio, potentialRevenue, revenue } from "../data/charts.json";
 import pendingQuotes from "../data/pending_quotes.json";
+import newLeads from "../data/new_leads.json";
 
 export function HomePage() {
+  function handleTeamChatClick(id: string) {
+    console.log(`Clicked on the chat item for id ${id}`);
+  }
+
   function handlePendingQuotesClick(id: string) {
+    console.log(id);
+  }
+
+  function handleNewLeadClick(id: string) {
     console.log(id);
   }
 
@@ -67,7 +76,7 @@ export function HomePage() {
         title="New leads"
         actions={<NewLeadsActions />}
       >
-        <NewLeads />
+        <NewLeads list={newLeads} onClick={handleNewLeadClick} />
       </Panel>
 
       <Panel
@@ -84,7 +93,7 @@ export function HomePage() {
         title="Team chat"
         actions={<TeamChatActions />}
       >
-        <TeamChat list={teamData} />
+        <TeamChat list={teamData} onClick={handleTeamChatClick} />
       </Panel>
 
       <Panel
